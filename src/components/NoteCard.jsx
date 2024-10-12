@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import Trash from "../icons/Trash";
-import { autoGrow, moveCardUp, setNewOffset } from "../utils";
+import { autoGrow, moveCardUp, setNewOffset, bodyParser } from "../utils";
 
 const NoteCard = ({ note }) => {
     const [position, setPosition] = useState(JSON.parse(note.position));
+    const body = bodyParser(note.body);
     const colors = JSON.parse(note.colors);
-    const body = JSON.parse(note.body);
     const textAreaRef = useRef(null);
 
     let startPosn = { x: 0, y: 0 };
