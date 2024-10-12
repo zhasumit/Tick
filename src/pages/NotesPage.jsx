@@ -15,11 +15,11 @@ const NotesPage = () => {
         const response = await db.notes.list();
         setNotes(response.documents);
     };
-    
+
     return (
         <div>
             {notes.map((note) => (
-                <NoteCard key={note.$id} note={note} />
+                <NoteCard key={note.$id} note={note} setNotes={setNotes} />
             ))}
         </div>
     );
