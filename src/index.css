@@ -87,3 +87,56 @@ textarea:focus {
     align-items: center;
     gap: 5px;
 }
+
+#controls {
+    display: flex;
+    flex-direction: column;
+    gap: .6em;
+    align-items: center;
+    position: fixed;
+    left: 1em;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #35363e;
+    padding: 0.4em 0.4em;
+    border-radius: 40px;
+
+    box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+        0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
+        0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
+    z-index: 10000;
+}
+
+#add-btn {
+    padding: 0.2em;
+
+    background-color: rgba(107, 107, 107, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+#add-btn:hover {
+    font-weight: 600;
+}
+
+.color {
+    background-color: grey;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.color:hover {
+    padding: 0.06em;
+
+    height: 35px;
+    width: 35px;
+}

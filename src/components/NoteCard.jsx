@@ -7,7 +7,7 @@ import { useContext } from "react";
 import { NoteContext } from "../context/NoteContext";
 
 const NoteCard = ({ note }) => {
-    const { setNotes } = useContext(NoteContext);
+    const { setSelectedNote } = useContext(NoteContext);
 
     const [saving, setSaving] = useState(false);
     const keyUpTimer = useRef(null);
@@ -22,6 +22,7 @@ const NoteCard = ({ note }) => {
 
     useEffect(() => {
         autoGrow(textAreaRef);
+        moveCardUp(cardRef.current);
     }, []);
 
     const mouseDown = (e) => {
@@ -33,6 +34,7 @@ const NoteCard = ({ note }) => {
             document.addEventListener("mouseup", mouseUp);
 
             moveCardUp(cardRef.current);
+            setSelectedNote(note);
         }
     };
 
@@ -116,7 +118,10 @@ const NoteCard = ({ note }) => {
                     onInput={() => {
                         autoGrow(textAreaRef);
                     }}
-                    onFocus={() => moveCardUp(cardRef.current)}
+                    onFocus={() => {
+                        moveCardUp(cardRef.current);
+                        setSelectedNote(note);
+                    }}
                 ></textarea>
             </div>
         </div>

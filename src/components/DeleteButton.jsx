@@ -1,8 +1,11 @@
 import Trash from "../icons/Trash";
 import { db } from "../appwrite/databases";
+import { useContext } from "react";
+import { NoteContext } from "../context/NoteContext";
 
-const DeleteButton = ({ noteId, setNotes }) => {
-    const handleDelete = async () => {
+const DeleteButton = ({ noteId }) => {
+    const { setNotes } = useContext(NoteContext);
+    const handleDelete = async (e) => {
         db.notes.delete(noteId);
         setNotes((prevState) =>
             prevState.filter((note) => note.$id !== noteId)
