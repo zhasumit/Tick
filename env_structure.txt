@@ -1,0 +1,12 @@
+VITE_ENDPOINT=https://cloud.appwrite.io/v1
+VITE_PROJECT_ID=
+VITE_DATABASE_ID=
+VITE_COLLECTION_NOTES_ID=
+
+
+
+Appwrite DB structure 
+1. one DB
+2. one collection 
+3. go in the collection and add three attributes 
+    -> body colors position (all string type values)
